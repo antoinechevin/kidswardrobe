@@ -9,32 +9,32 @@ interface HealthResponse {
 
 function App() {
   const [health, setHealth] = useState<HealthResponse | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {
     fetch('/api/health')
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch')
+        return res.json()
+      })
       .then(data => setHealth(data))
-      .catch(err => setError(err.message))
+      .catch(() => setError(true))
   }, [])
 
   return (
     <div className="App">
       <h1>KidsWardrobe</h1>
       <div className="card">
-        <h2>Application Status</h2>
-        {health && (
-          <div>
-            <p>Status: <strong>{health.status}</strong></p>
-            <p>Application: {health.application}</p>
-            <p>Timestamp: {health.timestamp}</p>
-          </div>
+        {health && health.status === 'UP' && (
+          <p style={{ fontSize: '1.5rem' }}>✅ Status: ok</p>
         )}
-        {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+        {error && (
+          <p style={{ fontSize: '1.5rem', color: '#ef4444' }}>❌ Erreur de connexion</p>
+        )}
+        {!health && !error && (
+          <p style={{ fontSize: '1.5rem' }}>⏳ Chargement...</p>
+        )}
       </div>
-      <p className="info">
-        Walking skeleton ready. Start building features!
-      </p>
     </div>
   )
 }

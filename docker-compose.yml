@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   postgres:
     image: postgres:16-alpine
@@ -17,7 +15,43 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - kidswardrobe-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: kidswardrobe-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/kidswardrobe
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - kidswardrobe-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: kidswardrobe-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - kidswardrobe-network
 
 volumes:
   postgres_data:
     driver: local
+
+networks:
+  kidswardrobe-network:
+    driver: bridge
