@@ -37,11 +37,21 @@ backend/src/main/java/fr/music music/kidswardrobe/
 
 ## Conventions de code
 
+### Langue du code
+**IMPORTANT : Tout le code (classes, méthodes, variables, commentaires) doit être écrit en ANGLAIS.**
+- ✅ Classes: `Child`, `Clothing`, `Wardrobe`, `HealthStatus`, `CheckHealthUseCase`
+- ✅ Méthodes: `check()`, `create()`, `findById()`, `isHealthy()`
+- ✅ Variables: `status`, `timestamp`, `applicationName`
+- ✅ Commentaires et JavaDoc: en anglais
+- ❌ Éviter: `Enfant`, `Vetement`, `verifier()`, `creer()`, etc.
+
+**Exception:** Les Gherkin (specs/) et la documentation peuvent rester en français si désiré.
+
 ### Java
 - Records pour les Value Objects, DTOs, Commands
 - Optional plutôt que null pour les retours
 - Validation avec Bean Validation sur les DTOs d'entrée
-- Nommage métier en français : `Enfant`, `Vetement`, `GardeRobe` (pas Child, Clothing)
+- Nommage clair et explicite en anglais
 
 ### Nommage des classes
 - `*UseCase` : interfaces port/in
