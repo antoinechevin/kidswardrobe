@@ -47,8 +47,8 @@
 
 ### Étape 5 : E2E dans la CI
 
-- [ ] Job e2e dans ci.yml
-- [ ] Validation : CI complète verte avec E2E
+- [x] Job e2e dans ci.yml
+- [ ] Validation : CI complète verte avec E2E (à vérifier après push)
 
 ### Étape 6 : Configuration finale
 
