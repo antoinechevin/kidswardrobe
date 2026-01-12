@@ -2,6 +2,14 @@
 
 echo "🚀 Setting up KidsWardrobe development environment..."
 
+# Install system dependencies
+echo "📦 Installing system dependencies..."
+sudo apt-get update -qq
+sudo apt-get install -y -qq git-lfs gh
+
+# Initialize git-lfs
+git lfs install
+
 # Setup Claude Code and Happy permissions
 mkdir -p ~/.claude
 sudo chown -R vscode:vscode ~/.claude
