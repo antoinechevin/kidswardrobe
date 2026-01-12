@@ -45,10 +45,10 @@
 - [x] playwright.config.js
 - [x] Validation : npm test passe localement (avec docker-compose up -d)
 
-### Étape 5 : E2E dans la CI
+### Étape 5 : E2E dans la CI ✅
 
 - [x] Job e2e dans ci.yml
-- [ ] Validation : CI complète verte avec E2E (à vérifier après push)
+- [x] Validation : CI complète verte avec E2E
 
 ### Étape 6 : Configuration finale
 
