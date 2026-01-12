@@ -26,6 +26,7 @@ out/
 .project
 .classpath
 .settings/
+settings.local.json
 
 # Env
 .env

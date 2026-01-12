@@ -1,0 +1,21 @@
+{
+  "name": "kidswardrobe-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "tsx node_modules/.bin/bddgen && playwright test",
+    "test:ui": "tsx node_modules/.bin/bddgen && playwright test --ui",
+    "test:headed": "tsx node_modules/.bin/bddgen && playwright test --headed",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0",
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.6",
+    "playwright-bdd": "^6.1.3",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.3.3"
+  }
+}
