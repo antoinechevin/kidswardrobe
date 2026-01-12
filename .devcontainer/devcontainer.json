@@ -11,6 +11,10 @@
       "dockerDashComposeVersion": "v2"
     }
   },
+  "mounts": [
+    "source=kidswardrobe-claude-auth,target=/home/vscode/.claude,type=volume",
+    "source=kidswardrobe-happy-auth,target=/home/vscode/.happy,type=volume"
+  ],
   "forwardPorts": [8080, 5173, 5432],
   "portsAttributes": {
     "8080": {

@@ -2,6 +2,15 @@
 
 echo "🚀 Setting up KidsWardrobe development environment..."
 
+# Setup Claude Code and Happy permissions
+mkdir -p ~/.claude
+sudo chown -R vscode:vscode ~/.claude
+chmod -R 755 ~/.claude
+
+mkdir -p ~/.happy
+sudo chown -R vscode:vscode ~/.happy
+chmod -R 755 ~/.happy
+
 # Install global npm tools
 echo "📦 Installing global npm packages..."
 npm install -g @anthropic-ai/claude-code || true
