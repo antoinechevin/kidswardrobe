@@ -1,10 +1,12 @@
 # CLAUDE.md
 
 ## Projet
+
 KidsWardrobe - Application de gestion de garde-robe pour enfants.
 Permet de suivre l'inventaire des vêtements et d'anticiper les besoins par saison.
 
 ## Stack technique
+
 - **Back** : Spring Boot 3.2+ / Java 21 / Maven
 - **BDD** : PostgreSQL + Flyway (migrations)
 - **Front** : React + Vite + TypeScript
@@ -12,7 +14,9 @@ Permet de suivre l'inventaire des vêtements et d'anticiper les besoins par sais
 - **CI/CD** : GitHub Actions + Railway
 
 ## Architecture
+
 Architecture hexagonale stricte.
+
 ```
 backend/src/main/java/fr/music music/kidswardrobe/
 ├── domain/                    # Cœur métier, AUCUNE dépendance externe
@@ -29,6 +33,7 @@ backend/src/main/java/fr/music music/kidswardrobe/
 ```
 
 ### Règles inviolables
+
 1. Le package `domain` ne dépend de RIEN (pas de Spring, pas de JPA, pas de libs externes)
 2. Les entités JPA (`*JpaEntity`) sont distinctes des entités domain
 3. Les mappers font la conversion entre couches
@@ -38,7 +43,9 @@ backend/src/main/java/fr/music music/kidswardrobe/
 ## Conventions de code
 
 ### Langue du code
+
 **IMPORTANT : Tout le code (classes, méthodes, variables, commentaires) doit être écrit en ANGLAIS.**
+
 - ✅ Classes: `Child`, `Clothing`, `Wardrobe`, `HealthStatus`, `CheckHealthUseCase`
 - ✅ Méthodes: `check()`, `create()`, `findById()`, `isHealthy()`
 - ✅ Variables: `status`, `timestamp`, `applicationName`
@@ -48,12 +55,14 @@ backend/src/main/java/fr/music music/kidswardrobe/
 **Exception:** Les Gherkin (specs/) et la documentation peuvent rester en français si désiré.
 
 ### Java
+
 - Records pour les Value Objects, DTOs, Commands
 - Optional plutôt que null pour les retours
 - Validation avec Bean Validation sur les DTOs d'entrée
 - Nommage clair et explicite en anglais
 
 ### Nommage des classes
+
 - `*UseCase` : interfaces port/in
 - `*Repository` : interfaces port/out (domain)
 - `*Service` : implémentation des use cases
@@ -64,11 +73,13 @@ backend/src/main/java/fr/music music/kidswardrobe/
 - `*Response` / `*Command` : DTOs
 
 ### Tests
+
 - `*Test` : tests unitaires (rapides, sans Spring)
 - `*IT` : tests d'intégration (avec Spring + Testcontainers)
 - `*ArchTest` : tests d'architecture ArchUnit
 
 ## Commandes
+
 ```bash
 # Back
 cd backend
@@ -76,7 +87,7 @@ cd backend
 ./mvnw verify                  # Tous les tests (intégration inclus)
 ./mvnw spring-boot:run         # Lancer en local
 
-# Front  
+# Front
 cd frontend
 npm install
 npm run dev                    # Dev server
@@ -102,11 +113,26 @@ docker-compose down            # Stoppe tout
 6. La PR est verte quand tous les scénarios E2E passent
 
 ## Avant chaque commit
+
 - [ ] Tous les tests passent (`./mvnw verify` + `npm test` dans e2e)
 - [ ] Pas de warning de compilation
 - [ ] Le code suit l'architecture hexagonale
 - [ ] Les nouveaux use cases ont des tests
 
 ## Structure des branches
+
 - `main` : production (déployé automatiquement)
 - `feature/*` : nouvelles fonctionnalités (PR → preview Railway)
+
+## Suivi de progression
+
+Après chaque tâche significative :
+
+1. Mets à jour PROGRESS.md en cochant les items terminés
+2. Fais un commit avec un message descriptif
+3. Si tu es interrompu, indique "EN COURS" à côté de l'item actuel
+
+Quand je te demande de reprendre :
+
+1. Lis PROGRESS.md pour voir où on en est
+2. Reprends à partir du premier item non coché
