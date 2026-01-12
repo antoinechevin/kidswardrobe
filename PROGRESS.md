@@ -42,8 +42,8 @@
 - [x] features/health.feature (Gherkin)
 - [x] steps/health.steps.ts (implémentation)
 - [x] steps/fixtures.ts
-- [x] playwright.config.js avec webServer (backend + frontend)
-- [x] Validation : npx playwright test passe localement
+- [x] playwright.config.js
+- [x] Validation : npm test passe localement (avec docker-compose up -d)
 
 ### Étape 5 : E2E dans la CI
 

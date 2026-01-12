@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
 
 const testDir = defineBddConfig({
-  features: 'specs/**/*.feature',
+  features: 'features/**/*.feature',
   steps: 'steps/**/*.ts',
 });
 
@@ -13,30 +13,18 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
+  timeout: 30000,
 
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: process.env.BASE_URL || 'http://localhost:80',
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
   },
 
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    },
-  ],
-
-  webServer: [
-    {
-      command: 'cd ../backend && ./mvnw spring-boot:run',
-      port: 8080,
-      timeout: 120 * 1000,
-      reuseExistingServer: !process.env.CI,
-    },
-    {
-      command: 'cd ../frontend && npm run dev',
-      port: 5173,
-      reuseExistingServer: !process.env.CI,
     },
   ],
 });
