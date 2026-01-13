@@ -51,3 +51,5 @@ test-results/
 # Misc
 *.bak
 *.tmp
+# AI Agent
+.gemini/
