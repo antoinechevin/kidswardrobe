@@ -47,9 +47,9 @@ so that we have a stable technical foundation with validated hex-arch structure 
 - Adhere strictly to the Source Tree defined in Architecture Doc Section 6.
 
 ### References
-- [PRD: Story 1.1](file:///home/anou/Code/kidswardrobe/docs/product-requirements.md#Section-6)
-- [Architecture: Source Tree](file:///home/anou/Code/kidswardrobe/docs/architecture.md#Section-6)
-- [Architecture: Tech Stack](file:///home/anou/Code/kidswardrobe/docs/architecture.md#Section-3)
+- [PRD: Story 1.1](file:///home/anou/Code/kidswardrobe/_bmad-output/analysis/product-requirements.md#Section-6)
+- [Architecture: Source Tree](file:///home/anou/Code/kidswardrobe/_bmad-output/analysis/architecture.md#Section-6)
+- [Architecture: Tech Stack](file:///home/anou/Code/kidswardrobe/_bmad-output/analysis/architecture.md#Section-3)
 
 ## Dev Agent Record
 
