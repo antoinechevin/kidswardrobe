@@ -1,8 +1,12 @@
-# Java
-target/
-*.class
-*.jar
-!.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+
+# Next.js
+.next/
+coverage/
+
 
 # Maven
 .mvn/timing.properties
