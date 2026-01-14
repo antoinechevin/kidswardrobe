@@ -1,20 +1,34 @@
-# 👕 KidsWardrobe
+# Kids Wardrobe - Gap Analysis App
 
-> Application de gestion de garde-robe pour enfants
+## Démarrage Rapide en Local
 
-🚧 **Projet en construction** — Walking skeleton en cours
+Pour lancer l'application complète sur votre machine, suivez ces 3 étapes dans des terminaux séparés :
 
-## Stack
+### 1. Base de données (Docker)
+Démarrez PostgreSQL via Docker Compose :
+```bash
+docker-compose -f docker/docker-compose.yml up -d
+```
+*Vérification :* Le conteneur `kidswardrobe-db` doit être "Up".
 
-- Backend : Spring Boot 3 / Java 21
-- Frontend : React / TypeScript  
-- Base de données : PostgreSQL
-- Architecture : Hexagonale
+### 2. Backend (Spring Boot)
+Lancez le serveur API (Java 21) :
+```bash
+./gradlew :apps:api-backend:bootRun
+```
+*URL API :* http://localhost:8080/api/health
 
-## Développement
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/antoinechevin/kidswardrobe)
+### 3. Frontend (Next.js)
+Lancez l'interface web :
+```bash
+cd apps/web-pwa
+npm run dev
+```
+*URL Web :* http://localhost:3000
 
 ---
 
-*Développé en vibe coding avec Claude Code + Happy Coder 🤖📱*
+## Pré-requis
+*   Docker & Docker Compose
+*   Java 21 (ou utiliser `./gradlew` qui gère le téléchargement)
+*   Node.js 20+
