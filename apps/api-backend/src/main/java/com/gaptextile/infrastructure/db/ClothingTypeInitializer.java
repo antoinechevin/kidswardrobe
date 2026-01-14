@@ -1,13 +1,10 @@
 package com.gaptextile.infrastructure.db;
 
 import com.gaptextile.domain.Seasonality;
-import com.gaptextile.infrastructure.db.ClothingTypeEntity;
-import com.gaptextile.infrastructure.db.JpaClothingTypeRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.UUID;
 
 @Component
 public class ClothingTypeInitializer implements CommandLineRunner {
@@ -19,7 +16,7 @@ public class ClothingTypeInitializer implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) {
+    public void run(String... args) throws Exception {
         if (repository.count() == 0) {
             initializeDefaults();
         }
