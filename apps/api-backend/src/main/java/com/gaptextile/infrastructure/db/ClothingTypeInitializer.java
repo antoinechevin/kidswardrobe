@@ -24,11 +24,14 @@ public class ClothingTypeInitializer implements CommandLineRunner {
 
     private void initializeDefaults() {
         List<ClothingTypeEntity> defaults = List.of(
-            new ClothingTypeEntity(null, "Body Manches Courtes", Seasonality.SUMMER),
-            new ClothingTypeEntity(null, "Body Manches Longues", Seasonality.WINTER),
-            new ClothingTypeEntity(null, "T-Shirt", Seasonality.SUMMER),
-            new ClothingTypeEntity(null, "Gilet", Seasonality.MID_SEASON),
-            new ClothingTypeEntity(null, "Pantalon", Seasonality.ALL_YEAR),
+                new ClothingTypeEntity(null, "Body Manches Courtes", Seasonality.SUMMER),
+                new ClothingTypeEntity(null, "Body Manches Longues", Seasonality.WINTER),
+                new ClothingTypeEntity(null, "T-Shirt", Seasonality.SUMMER),
+                new ClothingTypeEntity(null, "Gilet", Seasonality.MID_SEASON),
+                new ClothingTypeEntity(null, "Pantalon", Seasonality.ALL_YEAR),
+                new ClothingTypeEntity(null, "Short", Seasonality.SUMMER),
+                new ClothingTypeEntity(null, "Robe", Seasonality.SUMMER),    new ClothingTypeEntity(null, "Sweat / Pull", Seasonality.WINTER),
+            new ClothingTypeEntity(null, "Manteau", Seasonality.WINTER),
             new ClothingTypeEntity(null, "Pyjama", Seasonality.ALL_YEAR),
             new ClothingTypeEntity(null, "Chaussettes", Seasonality.ALL_YEAR)
         );
