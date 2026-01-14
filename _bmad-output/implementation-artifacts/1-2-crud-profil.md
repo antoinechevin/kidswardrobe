@@ -21,17 +21,17 @@ so that the gap analysis is accurate for each child.
 ## Tasks / Subtasks
 
 - [ ] Backend Implementation
-  - [ ] Create `Child` domain entity (ID, Name, SizeId)
-  - [ ] Implement `ChildService` ports and adapters
-  - [ ] Create REST API endpoints (`POST /children`, `GET /children`, `PUT /children/{id}`)
-  - [ ] Implement "Quick Size Update" endpoint (`PATCH /children/{id}/size`)
+  - [x] Create `Child` domain entity (ID, Name, SizeId)
+  - [x] Implement `ChildService` ports and adapters
+  - [x] Create REST API endpoints (`POST /children`, `GET /children`, `PUT /children/{id}`)
+  - [x] Implement "Quick Size Update" endpoint (`PATCH /children/{id}/size`)
 - [ ] Frontend Implementation
-  - [ ] Create Child Profile Card Component
-  - [ ] Create Child Management Page
-  - [ ] Integrate with Backend API
+  - [x] Create Child Profile Card Component
+  - [x] Create Child Management Page
+  - [x] Integrate with Backend API
 - [ ] Testing
-  - [ ] Unit tests for Domain logic
-  - [ ] Integration tests for API
+  - [x] Unit tests for Domain logic
+  - [x] Integration tests for API
 
 ## Dev Notes
 
